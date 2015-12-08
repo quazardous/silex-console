@@ -1,11 +1,11 @@
 {
 	"name" : "quazardous/silex-console",
+	"keywords" : [
+        "console",
+        "silex"
+    ],
 	"type" : "library",
 	"description" : "console service provider for Silex",
-	"keywords" : [
-		"console",
-		"silex"
-	],
 	"license" : "MIT",
 	"authors" : [{
 			"name" : "Quazardous",
