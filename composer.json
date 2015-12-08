@@ -1,0 +1,26 @@
+{
+	"name" : "quazardous/silex-console",
+	"type" : "library",
+	"description" : "console service provider for Silex",
+	"keywords" : [
+		"console",
+		"silex"
+	],
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Quazardous",
+			"email" : "berliozdavid@gmail.com",
+			"role" : "Developer"
+		}
+	],
+	"require" : {
+		"php" : ">=5.3.2",
+		"symfony/console" : "~2.3",
+		"silex/silex" : "1.*@dev"
+	},
+	"autoload" : {
+        "psr-4" : {
+            "Quazardous\\Silex\\" : "src/"
+        }
+    }
+}
