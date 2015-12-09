@@ -4,7 +4,7 @@ use Silex\ServiceProviderInterface;
 use Silex\Application;
 use Quazardous\Silex\Console\ConsoleEvent;
 
-class ConsoleProvider implements ServiceProviderInterface
+class ConsoleServiceProvider implements ServiceProviderInterface
 {
     public function register(Application $app)
     {

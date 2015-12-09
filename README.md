@@ -6,7 +6,7 @@ Yet another one.
 Add quazardous/silex-console to your composer.json and register the service.
 
 ```php
-$app->register(new Quazardous\Silex\Provider\ConsoleProvider);
+$app->register(new Quazardous\Silex\Provider\ConsoleServiceProvider);
 
 ```
 

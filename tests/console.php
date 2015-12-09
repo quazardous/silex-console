@@ -6,7 +6,7 @@ $app = new Silex\Application;
 
 $app['name'] = 'My nice Silex app';
 
-$app->register(new Quazardous\Silex\Provider\ConsoleProvider);
+$app->register(new Quazardous\Silex\Provider\ConsoleServiceProvider);
 
 class TestCommand extends Symfony\Component\Console\Command\Command
 {
