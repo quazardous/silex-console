@@ -5,7 +5,6 @@ use Quazardous\Silex\Console\Console;
 
 class ConsoleEvent extends Event
 {
-    const INIT = 'console.init';
     protected $console;
     
     public function __construct(Console $console)

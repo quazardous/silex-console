@@ -23,7 +23,7 @@ class TestCommand extends Symfony\Component\Console\Command\Command
 
 class TestCommandProvider implements Silex\ServiceProviderInterface {
     public function register(Silex\Application $app) {
-        $app['dispatcher']->addListener(Quazardous\Silex\Console\ConsoleEvent::INIT, function(Quazardous\Silex\Console\ConsoleEvent $event) {
+        $app['dispatcher']->addListener(Quazardous\Silex\Console\ConsoleEvents::INIT, function(Quazardous\Silex\Console\ConsoleEvent $event) {
             echo "Adding TestCommand(): test OK\n";
             $event->getConsole()->add(new TestCommand());
         });

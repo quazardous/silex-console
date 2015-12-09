@@ -3,6 +3,7 @@ namespace Quazardous\Silex\Provider;
 use Silex\ServiceProviderInterface;
 use Silex\Application;
 use Quazardous\Silex\Console\ConsoleEvent;
+use Quazardous\Silex\Console\ConsoleEvents;
 
 class ConsoleServiceProvider implements ServiceProviderInterface
 {
@@ -28,7 +29,7 @@ class ConsoleServiceProvider implements ServiceProviderInterface
                 $app['console.version']
             );
             // tell everyone the console has been initialzed
-            $app['dispatcher']->dispatch(ConsoleEvent::INIT, new ConsoleEvent($console));
+            $app['dispatcher']->dispatch(ConsoleEvents::INIT, new ConsoleEvent($console));
             return $console;
         });  
     }
