@@ -1,13 +1,13 @@
 <?php
 namespace Quazardous\Silex\Provider;
-use Silex\ServiceProviderInterface;
-use Silex\Application;
+use Pimple\ServiceProviderInterface;
+use Pimple\Container;
 use Quazardous\Silex\Console\ConsoleEvent;
 use Quazardous\Silex\Console\ConsoleEvents;
 
 class ConsoleServiceProvider implements ServiceProviderInterface
 {
-    public function register(Application $app)
+    public function register(Container $pimple)
     {
         $defaults = array(
             'console.name'    => 'Console',
@@ -16,26 +16,21 @@ class ConsoleServiceProvider implements ServiceProviderInterface
         );
         
         foreach ($defaults as $key => $value) {
-            if (!isset($app[$key])) {
-                $app[$key] = $value;
+            if (!isset($pimple[$key])) {
+                $pimple[$key] = $value;
             }
         }
         
-        $app['console'] = $app->share(function() use ($app) {
-            $c = $app['console.class'];
-            $console = new $c(
-                $app,
-                $app['console.name'],
-                $app['console.version']
+        $pimple['console'] = function($c) {
+            $class = $c['console.class'];
+            $console = new $class(
+                $c,
+                $c['console.name'],
+                $c['console.version']
             );
             // tell everyone the console has been initialzed
-            $app['dispatcher']->dispatch(ConsoleEvents::INIT, new ConsoleEvent($console));
+            $c['dispatcher']->dispatch(ConsoleEvents::INIT, new ConsoleEvent($console));
             return $console;
-        });  
-    }
-    
-    public function boot(Application $app)
-    {
-      
+        };  
     }
 }

@@ -14,9 +14,8 @@
 		}
 	],
 	"require" : {
-		"php" : ">=5.3.2",
 		"symfony/console" : "~2.3",
-		"silex/silex" : "1.*@dev"
+		"silex/silex" : "~2.0@dev"
 	},
 	"autoload" : {
         "psr-4" : {
