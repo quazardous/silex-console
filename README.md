@@ -1,5 +1,5 @@
 # Quazardous Silex Console Provider
-Yet another one.
+Yet another one but for Silex 2 !
 
 ## Intstallation
 

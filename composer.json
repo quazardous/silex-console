@@ -5,7 +5,7 @@
         "silex"
     ],
 	"type" : "library",
-	"description" : "console service provider for Silex",
+	"description" : "console service provider for Silex 2",
 	"license" : "MIT",
 	"authors" : [{
 			"name" : "Quazardous",
