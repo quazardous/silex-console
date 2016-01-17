@@ -14,7 +14,7 @@
 		}
 	],
 	"require" : {
-		"symfony/console" : "^2.3",
+		"symfony/console" : "^3.0",
 		"silex/silex" : "^2.0@dev"
 	},
 	"autoload" : {
