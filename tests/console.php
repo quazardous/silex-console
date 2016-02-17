@@ -39,4 +39,6 @@ $app->register(new Quazardous\Silex\Provider\ConsoleServiceProvider);
 
 echo "\n\n**Should say that Silex is booting and adding TestCommand()...**\n\n";
 
-$app['console']->run();
+$code = $app['console']->run();
+
+exit($code);
