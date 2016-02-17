@@ -43,6 +43,7 @@ class Console extends BaseApplication
     public function run(InputInterface $input = null, OutputInterface $output = null)
     {
         $this->getContainer()->boot();
+        $this->getContainer()->flush();
         $exitCode = parent::run($input, $output);
         $this->getContainer()->terminate(new Request(), new Response());
 
