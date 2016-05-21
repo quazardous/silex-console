@@ -8,6 +8,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Quazardous\Silex\Console\ConsoleEvent;
+use Quazardous\Silex\Console\ConsoleEvents;
 
 class Console extends BaseApplication
 {
@@ -44,6 +46,7 @@ class Console extends BaseApplication
     {
         $this->setAutoExit(false);
         $this->getContainer()->boot();
+        $this->getContainer()['dispatcher']->dispatch(ConsoleEvents::INIT, new ConsoleEvent($this));
         $this->getContainer()->flush();
         $exitCode = parent::run($input, $output);
         $this->getContainer()->terminate(new Request(), new Response());

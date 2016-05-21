@@ -4,12 +4,8 @@ namespace Quazardous\Silex\Provider;
 
 use Pimple\ServiceProviderInterface;
 use Pimple\Container;
-use Quazardous\Silex\Console\ConsoleEvent;
-use Quazardous\Silex\Console\ConsoleEvents;
-use Silex\Api\BootableProviderInterface;
-use Silex\Application;
 
-class ConsoleServiceProvider implements ServiceProviderInterface, BootableProviderInterface
+class ConsoleServiceProvider implements ServiceProviderInterface
 {
     public function register(Container $app)
     {
@@ -35,11 +31,5 @@ class ConsoleServiceProvider implements ServiceProviderInterface, BootableProvid
 
             return $console;
         };
-    }
-
-    public function boot(Application $app)
-    {
-        // tell everyone the console is ready
-        $app['dispatcher']->dispatch(ConsoleEvents::INIT, new ConsoleEvent($app['console']));
     }
 }
