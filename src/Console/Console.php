@@ -46,6 +46,7 @@ class Console extends BaseApplication
     {
         $this->setAutoExit(false);
         $this->getContainer()->boot();
+        $this->setDispatcher($this->getContainer()['dispatcher']);
         $this->getContainer()['dispatcher']->dispatch(ConsoleEvents::INIT, new ConsoleEvent($this));
         $this->getContainer()->flush();
         $exitCode = parent::run($input, $output);
